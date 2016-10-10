@@ -14,8 +14,9 @@ public class Controller {
 		VKeyListener vk = new VKeyListener(model.getPlayer());
 		
 		view.getFrame().addKeyListener(vk);
-		
+
 		this.model.getPlayer().addObserver(view.getPlayer());
+		this.model.getBalle().addObserver(view.getBalle());
 	}
 
 }

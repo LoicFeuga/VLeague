@@ -21,14 +21,22 @@ public class GameObject extends Observable{
 		notifyObservers(xy);
 	}
 	
-	public void setX(int x){
+	public void addX(int x){
 		this.x += x;
 		buildXY();
 	}
 
-	public void setY(int y) {
+	public void addY(int y) {
 		this.y += y;
 		buildXY();		
 	}
+	
+	public void setXY(int x, int y){
+		this.x = x;
+		this.y = y;
+		
+	}
+	
+	
 
 }

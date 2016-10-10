@@ -14,19 +14,19 @@ public class VKeyListener implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-			player.setX(20);
+			player.addX(20);
 		}
 
 		if(e.getKeyCode() == KeyEvent.VK_LEFT){
-			player.setX(-20);
+			player.addX(-20);
 		}
 
 		if(e.getKeyCode() == KeyEvent.VK_UP){
-			player.setY(-20);
+			player.addY(-20);
 		}
 
 		if(e.getKeyCode() == KeyEvent.VK_DOWN){
-			player.setY(20);
+			player.addY(20);
 		}
 
 	}

@@ -10,15 +10,21 @@ import org.json.*;
 public class Model {
 
 	private Player player;
+	private Balle balle;
 	
 	public Model() {
 		player = new Player();
+		balle = new Balle();
 
 	}
 
 	
 	public Player getPlayer(){
 		return player;
+	}
+	
+	public Balle getBalle(){
+		return balle;
 	}
 	
 	/**

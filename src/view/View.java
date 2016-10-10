@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import java.util.Observer;
 
 import javax.swing.JFrame;
 
@@ -11,36 +12,44 @@ public class View {
 	private int WIDTH;
 	private int HEIGHT;
 	private Player player;
-	
+	private Balle balle;
+
+
 	public View() {
 		frame = new JFrame();
 		init();
 		frame.setSize(WIDTH, HEIGHT);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		player = new Player();
+		player = new Player("./_Images/player.png");
+		balle = new Balle("./_Images/balle.png");
+
 		frame.add(player);
-		
+
 		frame.setVisible(true);
 	}
-	
+
 	/**
 	 * Permet d'initialiser les variables grace au fichier de config
 	 */
 	private void init(){
 		Integer [] conf = { (Integer) null, (Integer) null};		
 		conf = Model.getConfig();
-		
+
 		WIDTH = conf[0];
 		HEIGHT = conf[1];
 	}
-	
+
 	public Player getPlayer(){
 		return player;
 	}
-	
+
 	public JFrame getFrame(){
 		return frame;
 	}
-	
+
+	public Balle getBalle() {
+		return balle;
+	}
+
 }
