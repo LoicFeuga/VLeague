@@ -1,7 +1,6 @@
 package view;
 
-import java.awt.Color;
-import java.util.Observer;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
@@ -13,6 +12,7 @@ public class View {
 	private int HEIGHT;
 	private Player player;
 	private Balle balle;
+	private World world;
 
 
 	public View() {
@@ -23,9 +23,18 @@ public class View {
 
 		player = new Player("./_Images/player.png");
 		balle = new Balle("./_Images/balle.png");
-
-		frame.add(player);
-		frame.add(balle);
+		
+		ArrayList<GameObject> l = new ArrayList<>();
+		l.add(player);	l.add(balle);
+		
+		world = new World(l);
+		frame.add(world);
+		
+		player.setWorld(world);
+		balle.setWorld(world);
+		
+//		frame.add(player);
+//		frame.add(balle);
 		
 		frame.setVisible(true);
 	}

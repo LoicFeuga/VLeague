@@ -10,12 +10,13 @@ import java.util.Observer;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-public class GameObject extends JPanel implements Observer {
+public class GameObject  implements Observer {
 	private Image img;
 	private int x;
 	private int y;
 	private int width = 100;
 	private int height = 100;
+	private World world;
 	
 	public GameObject(String imagePath) {
 		super();
@@ -23,20 +24,30 @@ public class GameObject extends JPanel implements Observer {
 		try {img = ImageIO.read(new File(imagePath));} 
 		catch (IOException e) {e.printStackTrace();	}
 	}
-	 
-	@Override
-	public void paint(Graphics g) {
-		super.paint(g);
-		g.drawImage(img, x, y, this.width, this.height, null);
-	}
+	
 
+	public Image getImg(){
+		return img;
+	}
+	public int getX(){
+		return x;
+	}
+	public int getY(){
+		return y;
+	}
+	
+	public void setWorld(World world){
+		this.world= world;
+	}
+	
 	@Override
 	public void update(Observable o, Object arg) {
 		int [] recup = (int[]) arg;
 		x = recup[0];
 		y = recup[1];
+		
+		world.repaint();
 	
-		repaint();
 		
 	}
 

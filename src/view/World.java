@@ -17,6 +17,10 @@ public class World extends JPanel {
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
+		
+		for (GameObject o : list) {
+			g.drawImage(o.getImg(), o.getX(), o.getY(), 100,100,null);
+		}
 	}
 	
 

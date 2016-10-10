@@ -25,7 +25,7 @@ public class VKeyListener implements KeyListener {
 		}
 
 		if(e.getKeyCode() == KeyEvent.VK_UP){
-			player.addY(-20);
+			player.addY(-100);			
 		}
 
 		if(e.getKeyCode() == KeyEvent.VK_DOWN){

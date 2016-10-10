@@ -9,6 +9,7 @@ public class Balle extends GameObject {
 	private int goY = 5;
 	private int maxX = 0;
 	private int maxY = 0;
+	private int speed = 0;
 	
 	public Balle(){
 		super();
@@ -23,19 +24,23 @@ public class Balle extends GameObject {
 	
 	public void applyForce(){
 		if(x > 1150){
-			goX = -15;
+			goX = -15 - speed;
 		}else if( x < 0){
-			goX = 15;
+			goX = 15 + speed;
+			speed++;
 		}
 		
 		if(y > 600){
-			goY = -15;
+			goY = -15 - speed;
 		}else if( y < 0){
-			goY = 15;
+			goY = 15 + speed;
+			speed++;
 		}
 
 		addX(goX);
 		addY(goY);
+		
+
 			
 	}
 }

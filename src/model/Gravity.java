@@ -17,7 +17,7 @@ public class Gravity {
 		for (GameObject gameObject : list) {
 			
 			if(gameObject.getY() > 600){
-				gameObject.addY(-5);
+				gameObject.addY(-10);
 				gameObject.buildXY();
 			}else{
 				gameObject.addY(9);
