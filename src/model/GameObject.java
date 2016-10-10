@@ -3,8 +3,8 @@ package model;
 import java.util.Observable;
 
 public class GameObject extends Observable{
-	private int x;
-	private int y;
+	protected int x;
+	protected int y;
 	private int [] xy;
 	
 	public GameObject(){
@@ -14,7 +14,7 @@ public class GameObject extends Observable{
 		buildXY();		
 	}
 	
-	private void buildXY(){
+	public void buildXY(){
 		xy[0] = x;
 		xy[1] = y;
 		setChanged();
@@ -34,9 +34,12 @@ public class GameObject extends Observable{
 	public void setXY(int x, int y){
 		this.x = x;
 		this.y = y;
-		
+		buildXY();
 	}
-	
+
+	public int getY(){
+		return y;
+	}
 	
 
 }

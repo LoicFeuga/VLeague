@@ -26,6 +26,7 @@ public class GameObject extends JPanel implements Observer {
 	 
 	@Override
 	public void paint(Graphics g) {
+		super.paint(g);
 		g.drawImage(img, x, y, this.width, this.height, null);
 	}
 

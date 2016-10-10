@@ -2,13 +2,16 @@ package controller;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+import model.Model;
 import model.Player;
 
 public class VKeyListener implements KeyListener {
 	Player player;
-	
-	public VKeyListener(Player player) {
+	Model model;
+	public VKeyListener(Player player,Model model) {
 		this.player = player;
+		this.model = model;
 	}
 	
 	@Override
@@ -27,6 +30,10 @@ public class VKeyListener implements KeyListener {
 
 		if(e.getKeyCode() == KeyEvent.VK_DOWN){
 			player.addY(20);
+		}
+
+		if(e.getKeyCode() == KeyEvent.VK_SPACE){
+			model.stopRunning();
 		}
 
 	}

@@ -25,7 +25,8 @@ public class View {
 		balle = new Balle("./_Images/balle.png");
 
 		frame.add(player);
-
+		frame.add(balle);
+		
 		frame.setVisible(true);
 	}
 
